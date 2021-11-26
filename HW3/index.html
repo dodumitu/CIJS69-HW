@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="display: flex; justify-content: center; margin: 50px;">
+    <div class="main w-1/5 flex items-center flex-col bg-gray-200 rounded-2xl shadow-xl ">
+      <header class="font-bold p-4 m-9 rounded-2xl text-blue-300 bg-gray-600 shadow-md" >SIGN UP NEW ACCOUNT</header>
+      <div class="container flex items-center flex-col">
+        <div class="name p-2">
+          <p class="font-bold">User name</p>
+          <div class="inline-block border-2 border-gray-900 shadow-md " id="name_box"></div>
+        </div>
+        <div class="email p-2">
+          <p class="font-bold">Email</p>
+          <div class="inline-block border-2 border-gray-900 shadow-md" id="email_box"></div>
+        </div>
+        <div class="pass p-2">
+          <p class="font-bold">Password</p>
+          <div class="inline-block border-2 border-gray-900 shadow-md" id="password_box"></div>
+        </div>
+        <div class="confirm p-2">
+          <p class="font-bold">Confirm your Password</p>
+          <div class="inline-block border-2 border-gray-900 shadow-md" id="confirm_box"></div>
+        </div>
+      </div>
+      <button class="inline-block border-2 rounded-md text-blue-300 bg-gray-600 m-3" type="submit">
+        Sign Up
+      </button>
+    </div>
+   
+    <script src="app.js"></script>
+  </body>
+</html>
