@@ -4,9 +4,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
 
 import InputGroup from "./InputGroup.js";
-
-// const au
-
+import login from './login.js'
 class Register {
   $formEl;
   $displayNameEl;
@@ -14,6 +12,7 @@ class Register {
   $passwordEl;
   $confirmPasswordEl;
   $submitButtonEl;
+  $loginButtonEl;
 
   constructor() {
     this.$formEl = document.createElement("form");
@@ -47,7 +46,17 @@ class Register {
     this.$submitButtonEl.textContent = "Submit";
     this.$submitButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
     this.$submitButtonEl.addEventListener("click", this.handleSubmit);
+
+    this.$loginButtonEl = document.createElement('button');
+    this.$loginButtonEl.type = 'submit';
+    this.$loginButtonEl.textContent = 'Already have an account';
+    this.$loginButtonEl.setAttribute("class", "bg-white mx-20 py-2 px-4 rounded-md");
+    this.$loginButtonEl.addEventListener('click', this.login)
   }
+  login = () => {
+    const loginScreen = new login();
+    app.setActiveScreen(loginScreen);
+};
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -90,7 +99,7 @@ class Register {
       this.$passwordEl.setError("");
     }
     if (confirmPassword.trim().length === 0) {
-      this.$confirmPasswordEl.setError("confirm Password can not be empty");
+      this.$confirmPasswordEl.setError("Confirm Password can not be empty");
       flag = false;
     } else {
       this.$confirmPasswordEl.setError("");
@@ -118,6 +127,7 @@ class Register {
     this.$formEl.appendChild(this.$passwordEl.render());
     this.$formEl.appendChild(this.$confirmPasswordEl.render());
     this.$formEl.appendChild(this.$submitButtonEl);
+    this.$formEl.appendChild(this.$loginButtonEl);
 
     return this.$formEl;
   }
