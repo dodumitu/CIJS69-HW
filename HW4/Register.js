@@ -46,16 +46,18 @@ class Register {
     this.$submitButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
     this.$submitButtonEl.addEventListener("click", this.handleSubmit);
 
-    this.$loginButtonEl = document.createElement('a');
+    this.$loginButtonEl = document.createElement("a");
     // this.$loginButtonEl.type = 'submit';
-    this.$loginButtonEl.textContent = 'Already have an account';
-    this.$loginButtonEl.setAttribute("class", "bg-white mx-20 py-2 px-4 rounded-md");
-    this.$loginButtonEl.addEventListener('click', this.onGoTologin)
+    this.$loginButtonEl.textContent = "Already have an account";
+    this.$loginButtonEl.setAttribute(
+      "class",
+      "bg-white mx-20 py-2 px-4 rounded-md"
+    );
+    this.$loginButtonEl.addEventListener("click", this.onGoTologin);
   }
   onGoTologin = () => {
-    window.location.href ='./login.html'
-  }
-;
+    window.location.href = "./login.html";
+  };
   handleSubmit = (e) => {
     e.preventDefault();
 
@@ -68,8 +70,6 @@ class Register {
           alert(error.message);
         });
     }
-    
-  
   };
   validation() {
     const displayName = this.$displayNameEl.getInputValue();
