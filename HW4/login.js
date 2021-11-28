@@ -33,7 +33,8 @@ class login {
     this.$loginButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
     this.$loginButtonEl.addEventListener("click", this.handleSubmit);
 
-    this.$createAccButtonEl = document.createElement("p");
+    this.$createAccButtonEl = document.createElement("button");
+    this.$createAccButtonEl.type = "button"
     this.$createAccButtonEl.textContent = "Create an account";
     this.$createAccButtonEl.setAttribute(
       "class",

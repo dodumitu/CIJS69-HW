@@ -46,8 +46,8 @@ class Register {
     this.$submitButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
     this.$submitButtonEl.addEventListener("click", this.handleSubmit);
 
-    this.$loginButtonEl = document.createElement("a");
-    // this.$loginButtonEl.type = 'submit';
+    this.$loginButtonEl = document.createElement("button");
+    this.$loginButtonEl.type = 'button';
     this.$loginButtonEl.textContent = "Already have an account";
     this.$loginButtonEl.setAttribute(
       "class",
