@@ -10,6 +10,7 @@ import {
     $emailEl;
     $passwordEl;
     $loginButtonEl;
+    $createAccButtonEl
   
     constructor() {
       this.$formEl = document.createElement("form");
@@ -32,6 +33,14 @@ import {
       this.$loginButtonEl.textContent = "Login";
       this.$loginButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
       this.$loginButtonEl.addEventListener("click", this.handleSubmit);
+
+      this.$createAccButtonEl = document.createElement('p')
+      this.$createAccButtonEl.textContent = "Create an account";
+      this.$createAccButtonEl.setAttribute('class', "bg-white py-2 px-4 rounded-md");
+      this.$createAccButtonEl.addEventListener('click', this.OnGoToReg);
+    }
+    OnGoToReg= () => {
+      window.location.href="./Register.html"
     }
     handleSubmit = (e) => {
       e.preventDefault();
@@ -79,6 +88,7 @@ import {
       this.$formEl.appendChild(this.$emailEl.render());
       this.$formEl.appendChild(this.$passwordEl.render());
       this.$formEl.appendChild(this.$loginButtonEl);
+      this.$formEl.appendChild(this.$createAccButtonEl)
   
       return this.$formEl;
     }
