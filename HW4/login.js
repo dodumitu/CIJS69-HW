@@ -22,7 +22,7 @@ import {
   
       this.$passwordEl = new InputGroup(
         "password",
-        " Password",
+        "Password",
         "Enter your password"
       );
   

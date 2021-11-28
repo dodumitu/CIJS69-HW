@@ -4,7 +4,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
 
 import InputGroup from "./InputGroup.js";
-import login from './login.js'
 class Register {
   $formEl;
   $displayNameEl;
@@ -47,16 +46,16 @@ class Register {
     this.$submitButtonEl.setAttribute("class", "bg-white py-2 px-4 rounded-md");
     this.$submitButtonEl.addEventListener("click", this.handleSubmit);
 
-    this.$loginButtonEl = document.createElement('button');
-    this.$loginButtonEl.type = 'submit';
+    this.$loginButtonEl = document.createElement('a');
+    // this.$loginButtonEl.type = 'submit';
     this.$loginButtonEl.textContent = 'Already have an account';
     this.$loginButtonEl.setAttribute("class", "bg-white mx-20 py-2 px-4 rounded-md");
-    this.$loginButtonEl.addEventListener('click', this.login)
+    this.$loginButtonEl.addEventListener('click', this.onGoTologin)
   }
-  login = () => {
-    const loginScreen = new login();
-    app.setActiveScreen(loginScreen);
-};
+  onGoTologin = () => {
+    window.location.href ='./login.html'
+  }
+;
   handleSubmit = (e) => {
     e.preventDefault();
 
